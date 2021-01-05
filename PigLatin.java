@@ -38,4 +38,18 @@ public class PigLatin {
       return pigLatin(s);
     }
   }
+
+  public static void main(String[] args) {
+    Scanner n = new Scanner(System.in);
+    while( n.hasNextLine()) {
+      Scanner s = new Scanner(n.nextLine());
+      while (s.hasNext()) {
+        System.out.print(pigLatinBest(s.next()));
+        if (s.hasNext()) {
+          System.out.print(" ");
+        }
+      }
+      System.out.println();
+    }
+  }
 }
