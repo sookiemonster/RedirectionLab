@@ -26,4 +26,16 @@ public class PigLatin {
       return s.substring(1, s.length()) + s.substring(0,1) + "ay";
     }
   }
+
+  public static String pigLatinBest(String s) {
+    char firstChar = s.charAt(0);
+    char lastChar = s.charAt(s.length() - 1);
+    if (!Character.isLetter(firstChar)) {
+      return s;
+    } else if (!Character.isLetter(lastChar)) {
+      return pigLatin(s.substring(0, s.length() - 1)) + String.valueOf(lastChar);
+    } else {
+      return pigLatin(s);
+    }
+  }
 }
